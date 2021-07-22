@@ -66,27 +66,33 @@ interval = setInterval(function() {
     hungerEl.textContent = "I need some food   " + myPet.hunger;
     sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
     playEl.textContent = "play with me   " + myPet.boredom;
-// if (myPet.hunger === 0 || myPet.sleep === 0 || myPet.boredom === 0)
+if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
+    prompt ("your pet just died. see you in hell");
+}
+else if (myPet.hunger === 0 || myPet.sleep === 0|| myPet.boredom === 0){
+clearInterval(interval);
+prompt ("You are not a great caretaker you lose");
+}
     // add element in HTML to display numerals interval.
 }, 3000);
 }//if also conditional if = 10
 
 function hungerFunc() {
-    myPet.hunger -= 2;
+    myPet.hunger --;
     hungerEl.textContent = "I need some food " + myPet.hunger;
     //update hunger in HTML need function action to connect to html.
 }
 
 
 function sleepFunc() {
-myPet.sleep--;
+myPet.sleep-- ;
 sleepEl.textContent = "I'm so sleepy " + myPet.sleep;
 }
 
 
 
 function playFunc(){
-    myPet.boredom--;
+    myPet.boredom-- ;
     playEl.textContent = "play with me " + myPet.hunger;
 }
 
