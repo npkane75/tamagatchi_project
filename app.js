@@ -16,12 +16,12 @@ let myPet = null
 class Pet {
     //below is the instance of the class you are creating
     constructor(name) {
-console.log ('new pet class ready');
-this.name = name;
-this.hunger = 0;
-this.sleep = 0;
-this.boredom = 0;
-this.age = 0;
+        console.log ('new pet class ready');
+        this.name = name;
+        this.hunger = 0;
+        this.sleep = 0;
+        this.boredom = 0;
+        this.age = 0;
     }
 }
 
@@ -33,7 +33,7 @@ const hungerbtn = document.getElementById('hungerbtn')
 const sleepbtn = document.getElementById('sleepbtn')
 const countEl = document.getElementById('count');
 const playbtn =  document.getElementById ('playbtn')
-
+const ageEl = document.getElementById ('age')
 //this will be start game function which will take user input and will put that input into the new instance. Specifically into name variable. Then you can call call the function using the button which will be an event.
 
 
@@ -41,7 +41,7 @@ const playbtn =  document.getElementById ('playbtn')
 function startGame() {
     //the user input is being put into const name variable.
     const name = prompt('What is your pets name')
-     myPet = new Pet(name);
+    myPet = new Pet(name);
     healthCounter()
     //this is creating an instance or 
 }
@@ -55,51 +55,75 @@ let interval = null;  // the function healthCounter is stored here so we can cal
 //if the hunger, sleep or play button are pressed before the counters for either reaches 10 the pet lives. if not then dies. so each event will subtract else if any of the conditions reach 10.  
 
 function healthCounter() {
-interval = setInterval(function() {
-    // increase the count by one
-    count++;
-    myPet.hunger++;
-    myPet.sleep++;
-    myPet.boredom++;
-    // display the new count on the page
-    countEl.textContent = "we are going to start you off real healthy   " + count;
-    hungerEl.textContent = "I need some food   " + myPet.hunger;
-    sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
-    playEl.textContent = "play with me   " + myPet.boredom;
-if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
-    prompt ("your pet just died. see you in hell");
-}
-else if (myPet.hunger === 0 || myPet.sleep === 0|| myPet.boredom === 0){
-clearInterval(interval);
-prompt ("You are not a great caretaker you lose");
-}
-    // add element in HTML to display numerals interval.
-}, 3000);
+    interval = setInterval(function() {
+        if(count % 2 === 0){     // remainder operator modulus.
+            myPet.age ++;
+        }
+        count++;
+        myPet.hunger++;
+        myPet.sleep++;
+        myPet.boredom++;
+        // display the new count on the page
+        countEl.textContent = "we are going to start you off real healthy   " + count;
+        hungerEl.textContent = "I need some food   " + myPet.hunger;
+        sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
+        playEl.textContent = "play with me   " + myPet.boredom;
+        ageEl.textContent = "age is but a number but still  " + myPet.age;
+        if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
+            clearInterval(interval);
+            prompt ("your pet just died. see you in hell");
+            //reset counters to 0 including "count"  
+        }
+        else if(myPet.hunger <= 5){
+            hungerEl.textContent = "I am waiting!! I'm still hungry!" + myPet.hunger;
+        }
+        // add element in HTML to display numerals interval.
+    }, 3000);
 }//if also conditional if = 10
 
 function hungerFunc() {
-    myPet.hunger --;
-    hungerEl.textContent = "I need some food " + myPet.hunger;
+    if(myPet.hunger === 0){
+        hungerEl.textContent = "stop i'm to full!" + myPet.hunger;
+    }
+    
+    
+    else{
+        myPet.hunger --;
+        hungerEl.textContent = "I need some food " + myPet.hunger;
+    }
+    
     //update hunger in HTML need function action to connect to html.
 }
 
 
 function sleepFunc() {
-myPet.sleep-- ;
-sleepEl.textContent = "I'm so sleepy " + myPet.sleep;
-}
+    if(myPet.sleep === 0) {
+        sleepEl.textContent = "I'm so sleepy " + myPet.sleep;
+    }
+
+
+    else {
+        myPet.sleep --;
+        sleepEl.textcontent = "please put me to bed!" + myPet.sleep;
+        }
+    }
 
 
 
-function playFunc(){
-    myPet.boredom-- ;
-    playEl.textContent = "play with me " + myPet.hunger;
+function playFunc() {
+    if(myPet.boredom === 0) {
+        playEl.textCotent = "play with me   " +myPet.boredom;
+    }
+    else {
+        myPet.boredom-- ;
+        playEl.textContent = "play with me " + myPet.hunger;
+    } 
+    
 }
 
 //   // feed button need to subtract timer (--_)
 //function
 // }
-
 
 
 

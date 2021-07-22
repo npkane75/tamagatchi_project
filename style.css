@@ -1,0 +1,15 @@
+.container{
+display:grid;
+align-items: center;
+padding-top: 100px;
+}
+
+.header{
+display:flex;
+flex-direction: row;
+
+}
+
+#age {
+margin-left: 900px;
+}
