@@ -1,60 +1,17 @@
-// // setInterval() - Have a function run every set amount of time
-// // Call the provided function every 1000 milliseconds
 
-// // let count = 0;
 
-// // // Call the provided function every 1000 millisecods
-// // // Increase the count and then log it out every 1 second
-// // let interval = setInterval(function() {
-// //   count++; // increase the count by 1
 
-// //   console.log(count);
-// // }, 1000);
 
-// // // clearInterval will stop the interval that we pass to it
-// // clearInterval(interval);
 
-// ////////////////////////////////////////////////////
-// const startEl = document.getElementById('playbtn');
-// const pauseEl = document.getElementById('lightsbtn');
-// const resetEl = document.getElementById('playbtn');
-// const countEl = document.getElementById('count');
-
-// let count = 0;
-// let interval = null;
-
-// function handleStartClick() {
-// interval = setInterval(function() {
-//     // increase the count by one
-//     count++;
-
-//     // display the new count on the page
-//     countEl.textContent = 'Count: ' + count;
-// }, 1000);
-// }
-
-// function handlePauseClick() {
-//   // Stop the provided interval from running
-// clearInterval(interval);
-// }
-
-// function handleResetClick() {
-//   // Set count back to 0
-// count = 0;
-
-// countEl.textContent = 'Count: ' + count;
-
-//   // Stop the interval from running
-// clearInterval(interval);
-// }
-
-// // When the start button is clicked, call the provided
-// // function
+////MY CODE!
+// When the start button is clicked, call the provided
+// function
 // startEl.addEventListener('click', handleStartClick);
 // pauseEl.addEventListener('click', handlePauseClick);
 // resetEl.addEventListener('click', handleResetClick); 
 
 //set up class
+let myPet = null
 
 class Pet {
     //below is the instance of the class you are creating
@@ -64,24 +21,88 @@ this.name = name;
 this.hunger = 0;
 this.sleep = 0;
 this.boredom = 0;
+this.age = 0;
     }
 }
 
-const feedEl = document.getElementById('feedbtn');
-const playEl = document.getElementById('playbtn');
-const sleepEl = document.getElementById('sleepbtn');
+const hungerEl = document.getElementById('hunger');
+const playEl = document.getElementById('boredom');
+const sleepEl = document.getElementById('sleep');
 const startEl= document.getElementById('startbtn');
-
+const hungerbtn = document.getElementById('hungerbtn')
+const sleepbtn = document.getElementById('sleepbtn')
+const countEl = document.getElementById('count');
+const playbtn =  document.getElementById ('playbtn')
 
 //this will be start game function which will take user input and will put that input into the new instance. Specifically into name variable. Then you can call call the function using the button which will be an event.
+
+
 
 function startGame() {
     //the user input is being put into const name variable.
     const name = prompt('What is your pets name')
-    const myPet = new Pet(name);
-    //this is creating a new class? or renameing the class with user given input 'name'
+     myPet = new Pet(name);
+    healthCounter()
+    //this is creating an instance or 
 }
 
+
+//These are the individual button specfic timer functions
+let count = 0;
+let interval = null;  // the function healthCounter is stored here so we can call it later to stop function.
+
+
+//if the hunger, sleep or play button are pressed before the counters for either reaches 10 the pet lives. if not then dies. so each event will subtract else if any of the conditions reach 10.  
+
+function healthCounter() {
+interval = setInterval(function() {
+    // increase the count by one
+    count++;
+    myPet.hunger++;
+    myPet.sleep++;
+    myPet.boredom++;
+    // display the new count on the page
+    countEl.textContent = "we are going to start you off real healthy   " + count;
+    hungerEl.textContent = "I need some food   " + myPet.hunger;
+    sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
+    playEl.textContent = "play with me   " + myPet.boredom;
+// if (myPet.hunger === 0 || myPet.sleep === 0 || myPet.boredom === 0)
+    // add element in HTML to display numerals interval.
+}, 3000);
+}//if also conditional if = 10
+
+function hungerFunc() {
+    myPet.hunger -= 2;
+    hungerEl.textContent = "I need some food " + myPet.hunger;
+    //update hunger in HTML need function action to connect to html.
+}
+
+
+function sleepFunc() {
+myPet.sleep--;
+sleepEl.textContent = "I'm so sleepy " + myPet.sleep;
+}
+
+
+
+function playFunc(){
+    myPet.boredom--;
+    playEl.textContent = "play with me " + myPet.hunger;
+}
+
+//   // feed button need to subtract timer (--_)
+//function
+// }
+
+
+
+
+//   // Stop the interval from running
+// clearInterval(interval);
+//}
+//The add event listners are
 startEl.addEventListener('click', startGame);
-// pauseEl.addEventListener('click', handlePauseClick);
-// resetEl.addEventListener('click', handleResetClick); 
+hungerbtn.addEventListener('click', hungerFunc);
+sleepbtn.addEventListener('click', sleepFunc); 
+playbtn.addEventListener('click', playFunc);
+
