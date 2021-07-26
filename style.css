@@ -56,11 +56,21 @@ text-align: right;
     background-size: cover;
     height: 200px;
     width: 200px;
-}
+} 
 
 
 
 .feedimage{
+    display: flex;
+    background-image: url(../images/feedtextresize.jpg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 50px;
+    width: 150px;  
+}
+
+.sleepimage{
     display: flex;
     background-image: url(./images/feedtextresize.jpg);
     border: none;
@@ -70,10 +80,22 @@ text-align: right;
     width: 150px;  
 }
 
-.sleepimage{
-
+.boredimage{
+    display: flex;
+    background-image: url(./images/feedtextresize.jpg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 50px;
+    width: 150px;  
 }
 
-.boredimage{
-
+#hunger {
+    display: flex;
+    display: flex;
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 50px;
+  
 }
