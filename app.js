@@ -34,7 +34,7 @@ const sleepbtn = document.getElementById('sleepbtn')
 const countEl = document.getElementById('count');
 const playbtn =  document.getElementById ('playbtn')
 const ageEl = document.getElementById ('age')
-const restartEl=document.getElementById ('restart')
+const restartEl=document.getElementById ('restartbtn')
 //this will be start game function which will take user input and will put that input into the new instance. Specifically into name variable. Then you can call call the function using the button which will be an event.
 
 
@@ -65,20 +65,22 @@ function healthCounter() {
         myPet.sleep++;
         myPet.boredom++;
         // display the new count on the page
-        countEl.textContent = "Health   " + count;
-        hungerEl.textContent = "I need some food   " + myPet.hunger;
-        sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
-        playEl.textContent = "play with me   " + myPet.boredom;
-        ageEl.textContent = "Age  " + myPet.age;
+        countEl.textContent = "Health:   " + count;
+        hungerEl.textContent =  "I'm getting hungry   " + myPet.hunger;
+        sleepEl.textContent = "I'm a bit tired  " + myPet.sleep;
+        playEl.textContent = "I'm starting to get bored  " + myPet.boredom;
+        ageEl.textContent = "Age:  " + myPet.age;
         if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
             clearInterval(interval);
             interval = null;
             alert ("your pet just died");
             //reset counters to 0 including "count"  
         }
-        else if(myPet.hunger <= 5 ){
-            hungerEl.textContent = "I'm still hungry!" + myPet.hunger;
-        }
+        // else if(myPet.hunger >= 5 || myPet.sleep >= 5 || myPet.boredom >= 5 ){
+        //     hungerEl.textContent = "IM STARVING OVER HERE   " + myPet.hunger;
+        // sleepEl.textContent = " IM GONNA PASS OUT " + myPet.sleep;
+        // playEl.textContent ="IM GETTIN BORED  " + myPet.boredom
+        // }
         // add element in HTML to display numerals interval.
     }, 3000);
 }//if also conditional if = 10
@@ -106,7 +108,7 @@ function sleepFunc() {
 
     else {
         myPet.sleep --;
-        sleepEl.textcontent = "please put me to bed!" + myPet.sleep;
+        sleepEl.textcontent = "please put me to bed! " + myPet.sleep;
         }
     }
 

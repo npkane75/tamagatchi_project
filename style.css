@@ -8,12 +8,29 @@ flex-direction: row;
 display:flex;
 flex-direction: row;
 justify-content: space-between;
+font-size: x-large;
 }
 
-#age {
-margin-left: 900px;  
-text-align: right;
-}
+/* #age {
+    display: flex;
+    background-image: url(./images/agescript.jpg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+} */
+
+
+/* #count{
+    display: flex;
+    background-image: url(./images/countscript.jpg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+} */
 
 /* .wrapper {
     display: flex;
@@ -34,7 +51,7 @@ text-align: right;
 
 #hungerbtn{
     display: flex;
-    background-image: url(./images/babyfoodresize.jpg);
+    background-image: url(./images/feedmeresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -43,7 +60,7 @@ text-align: right;
 }
 #sleepbtn{
     display: flex;
-    background-image: url(./images/babyfoodresize.jpg);
+    background-image: url(./images/sleepyresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -52,7 +69,7 @@ text-align: right;
 }
 #playbtn{
     display: flex;
-    background-image: url(./images/babyfoodresize.jpg);
+    background-image: url(./images/playmeresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -60,20 +77,20 @@ text-align: right;
     width: 200px;
 }
 #startbtn{
-    align-items: center;
-    
+    display: flex;
+    background-image: url(./images/start.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
-    height: 50px;
-    width: 50px;
+    height: 93px;
+    width: 152px;
 } 
 
 
 
 .feedimage{
     display: flex;
-    background-image: url(images/feedtextresize.jpg);
+    background-image: url(.//images/feedmeresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -83,7 +100,7 @@ text-align: right;
 
 .sleepimage{
     display: flex;
-    background-image: url(./images/feedtextresize.jpg);
+    background-image: url(.//images/sleepyresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -93,7 +110,7 @@ text-align: right;
 
 .boredimage{
     display: flex;
-    background-image: url(./images/feedtextresize.jpg);
+    background-image: url(.//images/playmeresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -112,7 +129,7 @@ text-align: right;
 }
 
 /* display: flex;
-background-image: url(images/feedtext.svg);
+background-image: url(/images/feedtext.svg);
 border: none;
 background-color: transparent;
 background-size: contain;
@@ -121,7 +138,8 @@ width: 186px;
 background-repeat: no-repeat; */
 
 .mainimg {
-    height: 60vh;
+    height: 50vh;
+    padding-left: 30px;
     /* width: 30vw; */
 }
 
@@ -130,7 +148,28 @@ background-repeat: no-repeat; */
     justify-content: center;
 }
 
-.title {
+/* .title {
     display: flex;
     justify-content: center;
+} */
+
+.counters {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topheader {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+#restartbtn {
+    display: flex;
+    background-image: url(./images/cleargame.jpg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 98px;
+    width: 185px;
 }
