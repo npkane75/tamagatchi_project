@@ -34,6 +34,7 @@ const sleepbtn = document.getElementById('sleepbtn')
 const countEl = document.getElementById('count');
 const playbtn =  document.getElementById ('playbtn')
 const ageEl = document.getElementById ('age')
+const restartEl=document.getElementById ('restart')
 //this will be start game function which will take user input and will put that input into the new instance. Specifically into name variable. Then you can call call the function using the button which will be an event.
 
 
@@ -71,10 +72,11 @@ function healthCounter() {
         ageEl.textContent = "Age  " + myPet.age;
         if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
             clearInterval(interval);
-            prompt ("your pet just died. see you in hell");
+            interval = null;
+            alert ("your pet just died");
             //reset counters to 0 including "count"  
         }
-        else if(myPet.hunger <= 5){
+        else if(myPet.hunger <= 5 ){
             hungerEl.textContent = "I'm still hungry!" + myPet.hunger;
         }
         // add element in HTML to display numerals interval.
@@ -121,6 +123,10 @@ function playFunc() {
     
 }
 
+function restartGame (){
+location.reload();
+}
+
 //   // feed button need to subtract timer (--_)
 //function
 // }
@@ -135,4 +141,5 @@ startEl.addEventListener('click', startGame);
 hungerbtn.addEventListener('click', hungerFunc);
 sleepbtn.addEventListener('click', sleepFunc); 
 playbtn.addEventListener('click', playFunc);
+restartEl.addEventListener('click', restartGame)
 

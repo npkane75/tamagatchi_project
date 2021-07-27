@@ -15,6 +15,11 @@ margin-left: 900px;
 text-align: right;
 }
 
+/* .wrapper {
+    display: flex;
+    padding: 20px;
+} */
+
 .btncontainer {
     display:flex;
     justify-content: space-around;
@@ -114,3 +119,18 @@ background-size: contain;
 height: 249px;
 width: 186px;
 background-repeat: no-repeat; */
+
+.mainimg {
+    height: 60vh;
+    /* width: 30vw; */
+}
+
+.mainimage{
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
