@@ -7,7 +7,7 @@ flex-direction: row;
 .header{
 display:flex;
 flex-direction: row;
-
+justify-content: space-between;
 }
 
 #age {
@@ -17,6 +17,12 @@ text-align: right;
 
 .btncontainer {
     display:flex;
+    justify-content: space-around;
+
+}
+.countercontainer {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 
 }
@@ -49,20 +55,20 @@ text-align: right;
     width: 200px;
 }
 #startbtn{
-    display: flex;
-    background-image: url(./images/babyfoodresize.jpg);
+    align-items: center;
+    
     border: none;
     background-color: transparent;
     background-size: cover;
-    height: 200px;
-    width: 200px;
+    height: 50px;
+    width: 50px;
 } 
 
 
 
 .feedimage{
     display: flex;
-    background-image: url(../images/feedtextresize.jpg);
+    background-image: url(images/feedtextresize.jpg);
     border: none;
     background-color: transparent;
     background-size: cover;
@@ -96,6 +102,15 @@ text-align: right;
     border: none;
     background-color: transparent;
     background-size: cover;
-    height: 50px;
-  
+    height: 50px
+    width 100px;
 }
+
+/* display: flex;
+background-image: url(images/feedtext.svg);
+border: none;
+background-color: transparent;
+background-size: contain;
+height: 249px;
+width: 186px;
+background-repeat: no-repeat; */

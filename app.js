@@ -64,18 +64,18 @@ function healthCounter() {
         myPet.sleep++;
         myPet.boredom++;
         // display the new count on the page
-        countEl.textContent = "we are going to start you off real healthy   " + count;
+        countEl.textContent = "Health   " + count;
         hungerEl.textContent = "I need some food   " + myPet.hunger;
         sleepEl.textContent = "I'm so sleepy   " + myPet.sleep;
         playEl.textContent = "play with me   " + myPet.boredom;
-        ageEl.textContent = "age is but a number but still  " + myPet.age;
+        ageEl.textContent = "Age  " + myPet.age;
         if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
             clearInterval(interval);
             prompt ("your pet just died. see you in hell");
             //reset counters to 0 including "count"  
         }
         else if(myPet.hunger <= 5){
-            hungerEl.textContent = "I am waiting!! I'm still hungry!" + myPet.hunger;
+            hungerEl.textContent = "I'm still hungry!" + myPet.hunger;
         }
         // add element in HTML to display numerals interval.
     }, 3000);
