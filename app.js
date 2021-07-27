@@ -73,7 +73,7 @@ function healthCounter() {
         if (myPet.hunger === 10 || myPet.sleep === 10 || myPet.boredom === 10) {
             clearInterval(interval);
             interval = null;
-            alert ("your pet just died");
+            alert ("You just killed the Skull Tree");
             //reset counters to 0 including "count"  
         }
         // else if(myPet.hunger >= 5 || myPet.sleep >= 5 || myPet.boredom >= 5 ){
